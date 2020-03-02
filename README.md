@@ -13,6 +13,6 @@
   natural(4).
   true
   
-  natural(-1)
+  natural(-1).
   false
   ```
