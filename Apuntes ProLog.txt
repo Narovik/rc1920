@@ -1,0 +1,9 @@
+SÍMBOLOS DELANTE DE LAS VARIABLES
+
++ Para que el predicado funcione, el parámetro debe tener un valor.
+
+- La variable tiene que estar vacía, no puede tener un valor.
+
+? El parámetro puede tener valor o estar vacío.
+
+Ver: parámetros reversibles.
