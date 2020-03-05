@@ -1,0 +1,12 @@
+Deseamos probar que una propiedad P es cierta para todo elemento del Conjunto S
+
+-Debe existir concepto de orden y un primer elemento n0 (el más pequeño)
+
+1) P tiene que ser cierta para n0 (primero) 
+
+2) Para n>n0 Si P es cierta para n+1 entonces será cierta para n
+
+Ej: Numeros naturales (1,2,3...)
+
+	1) el 1 es natural -> natural(1)
+	2) si n-1 es natural entonces puedo afirmar que n es natural 
