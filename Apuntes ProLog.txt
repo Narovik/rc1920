@@ -1,3 +1,18 @@
+En ProLog se escribe al revés a->b es b:-a.
+	natural(N) :- N>1, N2 is N-1, natural(N2).
+	
+Las variables siempre empiezan por mayuscula
+Su ambito de visibilidad es solo una linea que termina con punto.
+
+Operador de asignacion is
+
+-------------
+Si todo lo que hay a la dcha es cierto,
+la parte izquierda es cierto
+	a ^ b ^ c -> d en prolog se escribe:
+	d :- a,b,c.
+-------------
+
 SÍMBOLOS DELANTE DE LAS VARIABLES
 
 + Para que el predicado funcione, el parámetro debe tener un valor.
@@ -7,3 +22,42 @@ SÍMBOLOS DELANTE DE LAS VARIABLES
 ? El parámetro puede tener valor o estar vacío.
 
 Ver: parámetros reversibles.
+
+---------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------
+
+5/3/20
+
+Clausulas de Horn (No tienen AND en la parte del antencedente)
+
+Error singleton: aparace la variable solo una vez y no se usa.
+	Para eso se debe escribir _ y no el nombre de la variable.
+
+Unificacion =
+
+A = B % A unifica con B
+
+La igualdad es otro concepto
+
+Dos términos unifican:
+1) Si no hay variables (son constantes),  unifican si los dos términos son idénticos.
+
+2) Si hay variables, unifican si puedo encontrar algo que pueda meter dentro para que lleguen a ser idénticos.
+
+Leer caracter a caracter me vale excepto si:
+
+	1+1 = +(1,1) // Notacion infija es equivalente a notacion prefija
+
+	(1+1) = 1+1	//Si el parentesis no altera la estructura de lo de dentro, se puede obviar
+	
+Operadores
+	is
+		Evalua lo que tiene a la derecha y lo unifica con la izquierda
+	=:=
+		Evalua a la izquierda y evalua a la derecha y unifica los resultados
+---------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------
+12/03/20
+
+LISTAS
+
