@@ -1,0 +1,27 @@
+REPRESENTACIÓN DEL CONOCIMIENTO - TAREAS SESIÓN 1
+VÍCTOR M. RODRÍGUEZ
+
+-------------------------------------------------------------------------------------------------
+concatenar([], Lista2, Lista2).
+concatenar([Cabeza|Resto], Lista2, [Cabeza|R]) :- concatenar(Resto, Lista2, R).
+-------------------------------------------------------------------------------------------------
+
+¿Seria posible utilizando el predicado concatenar obtener cualquier par de números consecutivos de una lista?
+ En caso afirmativo, ¿de qué forma tendría que utilizar el predicado concatenar para conseguirlo?
+
+	Se podría obtener llamando al predicado de la siguiente forma: 
+
+	concatenar(_, [N1,N2 | _ ], [1,2,3,4,5,6]).
+	
+	Iremos pidiendo las siguientes soluciones con ;
+ 
+¿Es posible hacer un uso reversible del predicado invertir? Si no fuese posible, ¿podría justificar por qué?
+
+
+
+
+Sería capaz de indicar que característica hace que un predicado no sea reversible.
+
+
+
+Como hemos visto en clase, el uso reversible de los predicados es una característica muy potente de Prolog. Haga uso de una combinación de los predicados concatenar e invertir en el que se utilice esta técnica.
