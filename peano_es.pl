@@ -76,15 +76,16 @@ multiplica(N1, s(N2), R)  :- multiplica(N1, N2, R1), suma(N1,R1,R).
 	5	2	->	R=2, Resto=1.
 	
 	3	2	->	R=1, Resto=1.
-	
 */
+
 divide(N1, N2, 0, N1):- menor(N1, N2).
 
 divide(N1, N2, s(R), Resto):-
 resta(N1, N2, N12),
 divide(N12, N2 , R, Resto).
   
-*/ Necistamos una funcion axuliar:
+/* 
+	Necesitamos una funcion axuliar:
 	menor(?N1, ?N2).
 	es cierto si N1 es menor que N2 en
 	aritmética de Peano.
