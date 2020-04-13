@@ -129,3 +129,186 @@ pertenece(E, a(Et, _, HD)):-
     hojas(HI, RI),
     hojas(HD, RD),	
 	append(RI, RD, R).
+	
+% O(n)     -> lineal
+% O(log n) -> logarítmico
+% O(n^2)   -> cuadrático
+
+/*
+id_user id_video
+
+1   1
+1   2
+1   3
+2   2
+2   3
+3   1    
+
+¿Qué vídeo de YouTube fue el más visitado
+el mes pasado? Para ordenar tengo un algoritmo
+cuadrático.
+
+Quiero tener la respuesta antes de mañana a las 9
+
+4.500.000 cada minuto 
+visualizaciones de vídeos en YouTube al día
+
+Procesador i7 5500U 2.4 Ghz
+
+*/
+
+/*
+buscar_abb(E, ABB)
+ es cierto si el elemento E pertenece al 
+ árbol binario de búsqueda ABB
+*/
+
+buscar_abb(E, a(E, _, _)).
+
+buscar_abb(E, a(Raiz, HI, _)):-
+  E < Raiz,
+  buscar_abb(E, HI).
+
+buscar_abb(E, a(Raiz, _, HD)):-
+  E > Raiz,
+  buscar_abb(E, HD).
+
+/*
+       9
+	  / \
+     5   12
+	/ \  / \ 
+   3   7 10 15
+
+*/
+
+ arbol4(a(9, a(5, a(3,nil,nil), a(7,nil,nil)), a(12, a(10,nil,nil), a(15,nil,nil)))).
+
+
+ /* crea_arbol(+Lista, +Arbol)
+	es cierto si Arbol unifica con un arbol
+	binario que contiene los elementos
+	de una lista
+*/
+
+
+crea_arbol([], nil).
+crea_arbol([Cabeza|Resto], a(Cabeza, R, nil) ):-
+  crea_arbol(Resto, R).
+  
+/*
+    crea_arbol([1,2,3,4,5], R).
+   
+        1
+       /	   
+      2
+	 /
+    3
+   /
+  4
+ / 
+5 
+
+*/
+
+/*
+ balanceado(+Arbol)
+  es cierto si Arbol es un árbol binario 
+  balanceado. Para todo nodo, la diferencia
+  entre la altura del árbol derecho y el 
+  árbol izquierdo es como máximo 1.
+   
+      1
+	 / \
+    2   3
+   /
+  4
+ /
+5
+ 
+*/
+arbol5(a(1, a(2, a(4, a(5,nil,nil), nil), nil), a(3,nil,nil))).
+
+balanceado(nil).
+balanceado(a(_, HI, HD)):-
+  altura(HI, AI),
+  altura(HD, AD),
+  R is AI - AD,
+  X is abs(R),
+  1 is max(1, X),
+  balanceado(HI),
+  balanceado(HD).
+  
+  /*
+        1
+	   / \
+      2   5
+	 /     \
+    3       6
+   /         \
+  4           7
+  
+        1
+	   / \
+      2   5
+	 /     
+    3       
+   /         
+  4           
+  
+  */
+  
+ /* altura(+A, -R)
+    es cierto si R unifica con la
+    altura del árbol binario A
+*/	
+
+altura(nil, 0).
+altura(a(_, HI, HD), R2):-
+  altura(HI, RI),
+  altura(HD, RD),
+  R is max(RI, RD),
+  R2 is R + 1.
+  
+/*
+ crea_balanceado(+Lista, -Arbol)
+  es cierto si Arbol unifica con un
+  árbol binario balanceado que contiene 
+  todos los elementos de Lista
+*/
+
+crea_balanceado([], nil).
+
+crea_balanceado([Cab|Resto], a(Cab, R1, R2) ):-
+  length(Resto, Length),
+  Med is Length div 2,
+  length(L1, Med),
+  append(L1, L2, Resto),
+  crea_balanceado(L1, R1),
+  crea_balanceado(L2, R2).  
+
+
+  /*
+ crea_abb(+Lista, -ABB)
+  es cierto si ABB unifica con un
+  árbol binario busqueda balanceado
+  que contiene 
+  todos los elementos de Lista
+  Suponemos que Lista está ordenada 
+  de menor a mayor
+  
+  Igual que el anterior, poniendo el valor
+  medio en la raiz (primero de la segunda lista)
+*/
+
+crea_abb([], nil).
+
+crea_abb(Lista, a(M, R1, R2) ):-
+  length(Lista, Length),
+  Med is Length div 2,
+  length(L1, Med),
+  append(L1, [M|L2], Lista),
+  crea_abb(L1, R1),
+  crea_abb(L2, R2).  
+
+ 
