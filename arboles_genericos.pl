@@ -18,11 +18,11 @@
           2  3  4
 		 /|\    |
         5 6 7   8
+		
 */
 arbol1(a(1, [a(3,[]), a(4, []), a(5, [])])).
-arbol2(
-   a(1,[a(2,[a(5,[]),a(6,[]),a(7,[])]),a(3,[]),a(4,[a(8,[])])])
-).
+
+arbol2(a(1,[a(2,[a(5,[]),a(6,[]),a(7,[])]),a(3,[]),a(4,[a(8,[])])])).
 
 /*
 pertenece(E, Arbol)
@@ -107,4 +107,10 @@ crea([Cabeza|Resto], a(Cabeza,[Arbol])) :- crea(Resto,Arbol).
   que contiene las etiquetas del recorrido 
   en anchura del árbol genérico A.
 */  
+
+
+anchura(a(E,Lista),[E|Lista2]):- anchura(Lista,Lista2).
+
+anchura([],[]).
+anchura([C|Resto],[E|R]):- C = a(E,L),  append(Resto,L,S), anchura(S,R).
 
