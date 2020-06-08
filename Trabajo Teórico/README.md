@@ -1,5 +1,5 @@
 # TÉCNICAS DE REPRESENTACIÓN DEL CONOCIMIENTO EN INTELIGENCIA ARTIFICIAL
-###### Víctor M. Rodríguez
+###### Víctor M. Rodríguez - ETSI Universidad de Huelva - Representación del Conocimiento 2019-2020
 
 ## Lógica
 La representación lógica consiste en un lenguaje con reglas definidas de tal manera que no exista la ambigüedad. 
