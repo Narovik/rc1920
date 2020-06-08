@@ -1,4 +1,5 @@
-# Problema no. 93: Puzle Aritmético – Víctor M. Rodríguez Navarro
+# Problema no. 93: Puzle Aritmético
+###### Víctor M. Rodríguez - ETSI Universidad de Huelva - Representación del Conocimiento 2019-2020
 Este documento detalla la resolución del problema número 93 de la plataforma P-99 (Ninety-nine ProLog Problems). Idea original del problema por Roland Beuret.
 
 ## Planteamiento
